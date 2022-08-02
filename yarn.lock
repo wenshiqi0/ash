@@ -218,3 +218,8 @@ vite@^3.0.4:
     rollup "^2.75.6"
   optionalDependencies:
     fsevents "~2.3.2"
+
+xterm@^4.19.0:
+  version "4.19.0"
+  resolved "https://registry.npmmirror.com/xterm/-/xterm-4.19.0.tgz#c0f9d09cd61de1d658f43ca75f992197add9ef6d"
+  integrity sha512-c3Cp4eOVsYY5Q839dR5IejghRPpxciGmLWWaP9g+ppfMeBChMeLa1DCA+pmX/jyDZ+zxFOmlJL/82qVdayVoGQ==
