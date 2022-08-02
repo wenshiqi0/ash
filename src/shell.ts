@@ -14,7 +14,7 @@ export class Shell {
     private _command: string = '';
 
     private writeStderr(content: string) {
-        this._stdout.emit(typeof content === 'string' ? stringToUtf8ArrayBuffer(content) : content);
+        this._stderr.emit(typeof content === 'string' ? stringToUtf8ArrayBuffer(content) : content);
     }
 
     private prompt() {

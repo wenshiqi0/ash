@@ -19,7 +19,12 @@ if (root) {
             "PS1": "\\u@\\h \\@ \\$ ",
         }
     });
+
     shell.onStdout((buff) => {
+        term.write(new Uint8Array(buff));
+    })
+
+    shell.onStderr((buff) => {
         term.write(new Uint8Array(buff));
     })
 
