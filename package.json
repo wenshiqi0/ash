@@ -1,0 +1,15 @@
+{
+  "name": "tsh",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:lib": "tsc -p config/ts/tsconfig.lib.json",
+    "build:esnext": "tsc -p config/ts/tsconfig.esnext.json",
+    "build": "npm run build:lib && npm run build:esnext"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4",
+    "vite": "^3.0.4"
+  }
+}

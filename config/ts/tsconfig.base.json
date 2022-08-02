@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "rootDir": "../../src",
+    "sourceMap": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "../../src/**/*"
+  ],
+  "exclude": [
+    "../../es",
+    "../../lib",
+    "../../test"
+  ]
+}
