@@ -92,142 +92,73 @@ export interface ISyscall {
    * @returns 
    */
   syscall_mkdir: (path: number, mode: number) => number;
-
   syscall_futex: () => void;
-
   syscall_bind: () => void;
-
   syscall_fchownat: () => void;
-
   syscall_faccessat: () => void;
-
   syscall_faccessat2: () => void;
-
   syscall_getegid: () => void;
-
   syscall_fchmod: () => void;
-
   syscall_getgid: () => void;
-
   syscall_getgroups: () => void;
-
   syscall_getpeername: () => void;
-
   syscall_getpgid: () => void;
-
   syscall_getppid: () => void;
-
   syscall_getrandom: (buf: number, buflen: number, flags: number) => void;
-
   syscall_getrusage: () => void;
-
   syscall_getsockname: () => void;
-
   syscall_pipe2: () => void;
-
   syscall_poll: () => void;
-
   syscall_setpgid: () => void;
-
   syscall_setgid: () => void;
-
   syscall_setuid: (uid: number) => number;
-
   syscall_getuid: () => number;
-
   syscall_pselect6: (nfds: number, readfds: number, writefds: number, exceptfds: number, timeout: number, sigmask: number) => void;
-
   syscall_set_robust_list: () => void;
-
   syscall_readlink: () => void;
-
   syscall_recvfrom: () => void;
-
   syscall_rename: () => void;
-
   syscall_setsockopt: () => void;
-
   syscall_chmod: () => void;
-
   syscall_chroot: () => void;
-
   syscall_clock_getres: () => void;
-
   syscall_clock_settime: () => void;
-
   syscall_setregid: () => void;
-
   syscall_setreuid: () => void;
-
   syscall_fchdir: () => void;
-
   syscall_fchmodat: () => void;
-
   syscall_openat: () => void;
-
   syscall_fchown: () => void;
-
   syscall_fsync: () => void;
-
   syscall_ftruncate: () => void;
-
   syscall_getitimer: () => void;
-
   syscall_getpriority: () => void;
-
   syscall_getsid: () => void;
-
   syscall_link: () => void;
-
   syscall_linkat: () => void;
-
   syscall_mkdirat: () => void;
-
   syscall_pread: () => void;
-
   syscall_pwrite: () => void;
-
   syscall_readlinkat: () => void;
-
   syscall_renameat: () => void;
-
   syscall_rmdir: () => void;
-
   syscall_sched_get_priority_max: () => void;
-
   syscall_sched_get_priority_min: () => void;
-
   syscall_sched_yield: () => void;
-
   syscall_sendfile: () => void;
-
   syscall_setresgid: () => void;
-
   syscall_setresuid: () => void;
-
   syscall_setpriority: () => void;
-
   syscall_sigaltstack: () => void;
-
   syscall_rt_sigpending: () => void;
-
   syscall_rt_sigtimedwait: () => void;
-
   syscall_statfs: () => void;
-
   syscall_fstatfs: () => void;
-
   syscall_symlink: () => void;
-
   syscall_symlinkat: () => void;
-
   syscall_sync: () => void;
-
   syscall_times: () => void;
-
   syscall_truncate: () => void;
-
   syscall_unlinkat: () => void;
-
   syscall_utimensat: () => void;
 }

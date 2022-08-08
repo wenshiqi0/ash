@@ -1,6 +1,7 @@
 import { EventEmitter } from './event';
 import { stringToUtf8ArrayBuffer } from './string';
-import { IWASI } from './wasi';
+import { IFileSystem } from './fs';
+// import { IWASI } from './wasi';
 
 export interface ShellOptions {
     env?: { [key: string]: string },
@@ -50,12 +51,12 @@ export class Shell {
         }
     }
 
-    private isExternalCommand(command: string) {
+    private isExternalCommand(_: string) {
         return false;
     }
 
-    private execExternalCommand(command: string) {
-        const { nofork } = this.env;
+    private execExternalCommand(_: string) {
+        // todo
     }
 
     private notFoundCommand(command: string) {
@@ -77,6 +78,7 @@ export class Shell {
 
     constructor(
         private _options: ShellOptions,
+        private _fs: IFileSystem,
     ) { }
 
     start() {

@@ -1,9 +1,13 @@
 import { Shell, ShellOptions } from './shell';
+import { IFileSystem } from './fs';
 
-export default {
-    create: (options: ShellOptions) => {
-        return new Shell(options);
-    },
+export namespace ash {
+    export function create(
+        fs: IFileSystem,
+        options: ShellOptions
+    ) {
+        return new Shell(options, fs);
+    }
 }
 
-export type { Shell, ShellOptions } from './shell';
+export * from './fs';

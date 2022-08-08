@@ -1,4 +1,4 @@
-import Ash from '../es';
+import { ash } from '../es';
 import { Terminal } from 'xterm';
 import 'xterm/css/xterm.css';
 import './index.css';
@@ -10,15 +10,18 @@ const root = document.getElementById('root');
 
 if (root) {
     term.open(root);
-    const shell = Ash.create({
-        env: {
-            "HOME": "/",
-            "PWD": "/",
-            "PATH": "/usr/bin",
-            "SHELL": "tsh",
-            "PS1": "\\u@\\h \\@ \\$ ",
+    const shell = ash.create(
+        {},
+        {
+            env: {
+                "HOME": "/",
+                "PWD": "/",
+                "PATH": "/usr/bin",
+                "SHELL": "tsh",
+                "PS1": "\\u@\\h \\@ \\$ ",
+            }
         }
-    });
+    );
 
     shell.onStdout((buff) => {
         term.write(new Uint8Array(buff));
