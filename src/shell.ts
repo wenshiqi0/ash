@@ -40,7 +40,7 @@ export class Shell {
         ].indexOf(command) > -1;
     }
 
-    private execBuildInCommand(command: string) {
+    private runBuildInCommand(command: string) {
         switch (command) {
             case 'pwd':
                 this.newline();
@@ -55,7 +55,7 @@ export class Shell {
         return false;
     }
 
-    private execExternalCommand(_: string) {
+    private runExternalCommand(_: string) {
         // todo
     }
 
@@ -67,9 +67,9 @@ export class Shell {
     private async exec(command: string) {
         if (command) {
             if (this.isBuildIn(command)) {
-                this.execBuildInCommand(command);
+                this.runBuildInCommand(command);
             } else if (this.isExternalCommand(command)) {
-                this.execExternalCommand(command);
+                this.runExternalCommand(command);
             } else {
                 this.notFoundCommand(command);
             }
