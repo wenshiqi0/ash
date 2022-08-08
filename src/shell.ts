@@ -1,12 +1,13 @@
 import { EventEmitter } from './event';
 import { stringToUtf8ArrayBuffer } from './string';
+import { IWASI } from './wasi';
 
 export interface ShellOptions {
     env?: { [key: string]: string },
+    nofork?: boolean,
 }
 
 export class Shell {
-    private _options: ShellOptions;
     // private _stdin = new EventEmitter<ArrayBuffer>();
     private _stdout = new EventEmitter<ArrayBuffer>();
     private _stderr = new EventEmitter<ArrayBuffer>();
@@ -49,20 +50,34 @@ export class Shell {
         }
     }
 
+    private isExternalCommand(command: string) {
+        return false;
+    }
+
+    private execExternalCommand(command: string) {
+        const { nofork } = this.env;
+    }
+
+    private notFoundCommand(command: string) {
+        this.newline();
+        this.writeStderr(`ash: command not found: ${command}`);
+    }
+
     private async exec(command: string) {
         if (command) {
             if (this.isBuildIn(command)) {
                 this.execBuildInCommand(command);
+            } else if (this.isExternalCommand(command)) {
+                this.execExternalCommand(command);
             } else {
-                // TODO: 尝试调用支持 wasi 的 wasm 应用
+                this.notFoundCommand(command);
             }
         }
     }
 
-    constructor(options: ShellOptions) {
-        this._options = options;
-        console.log(this.env);
-    }
+    constructor(
+        private _options: ShellOptions,
+    ) { }
 
     start() {
         this.prompt();

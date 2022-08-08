@@ -1,4 +1,4 @@
-import api from '../es';
+import Ash from '../es';
 import { Terminal } from 'xterm';
 import 'xterm/css/xterm.css';
 import './index.css';
@@ -10,7 +10,7 @@ const root = document.getElementById('root');
 
 if (root) {
     term.open(root);
-    const shell = api.create({
+    const shell = Ash.create({
         env: {
             "HOME": "/",
             "PWD": "/",
